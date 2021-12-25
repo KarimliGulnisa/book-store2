@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+   box-sizing: border-box;
+}
+a#a_items{
+    color: black !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    padding: 0 20px;
+}
+a{
+    text-decoration: none;
+    color: #720418;
+    font-weight: bold;
+}
+
+a#a_items:hover{
+    color: #E16A00;
+}
+.margin-right{
+    margin-left: 300px;
+}
+
+footer{
+    display: flex;
+    width: 100%;
+    height: 276px;
+    background-color: #720418;
+    justify-content: space-evenly;
+
+}
+.footer-logo{
+    width: 100px;
+    height: 100px;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.footer-logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.popular,.information,.help{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.popular a,.information a,.help a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.contact_sosial_media_profiles{
+    width: 350px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+
+}
+.contact_sosial_media_profiles h4{
+ text-align: center;
+}
+.sosial_media_card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.contact_sosial_media_profiles i{
+    font-size: 50px;
+}
+
+.dilivery {
+    margin: 50px 0;
+}
+.dilivery h4{
+    font-weight: bold;
+    text-align: center;
+}
+
+.dilivery p{
+    text-align: center;
+    padding: 15px;
+
+}
+
+.AboutStore{
+    display: flex;
+    flex-direction: column;
+}
+
+.statics{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+.AboutStore h4{
+    text-align: center;
+}
+.static_card{
+    display: flex;
+    flex-direction: row;
+}
+.statics .number{
+    font-weight: bold;
+    font-size:2rem;
+
+}
+
+.statics .statics_title{
+    font-size:1.5rem;
+    padding: 5px 10px;
+   
+}
+
+
+.catalog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 25px;
+}
+
+.catalog h3{
+   margin: auto;    
+}
+.catalog_list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 820px;
+    padding: 15px;
+    margin: 20px auto;
+    
+}
+.catalog_list a{
+  width: 200px;
+  height: 60px;
+   border: 1px solid #ddd;
+   text-align: center;
+   padding: 15px 0;
+   margin: 15px;
+
+    
+}
+.ortahisse{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 50px 0;
+}
+.book_A-Z{
+    width: 460px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.book_A-Z h1{
+    
+}
+.book_A-Z p{
+    
+}
+
+.book_A-Z #goToCatalog{
+    width: 200px;
+    border: none;
+    background-color: #E16A00;
+    padding: 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+
+}
+.book_A-Z #goToCatalog:hover{
+    opacity: 0.6;
+
+}
+.book_panel{
+    width: 600px;
+    height: 400px;
+    background-color: #720418;
+    position: relative;
+}
+.book_panel .for_img{
+    width: 400px;
+    height: 350px;
+}
+.book_panel .for_img img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin-left: -45px;
+}

@@ -1,0 +1,256 @@
+*{
+    margin: 0;
+    padding: 0;
+   box-sizing: border-box;
+}
+a#a_items{
+    color: black !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    padding: 0 20px;
+}
+a{
+    text-decoration: none;
+    color: #720418;
+    font-weight: bold;
+}
+
+a#a_items:hover{
+    color: #E16A00;
+}
+.margin-right{
+    margin-left: 300px;
+}
+
+footer{
+    display: flex;
+    width: 100%;
+    height: 276px;
+    background-color: #720418;
+    justify-content: space-evenly;
+
+}
+.footer-logo{
+    width: 100px;
+    height: 100px;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.footer-logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.popular,.information,.help{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.popular a,.information a,.help a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.contact_sosial_media_profiles{
+    width: 350px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+
+}
+.contact_sosial_media_profiles h4{
+ text-align: center;
+}
+.sosial_media_card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.contact_sosial_media_profiles i{
+    font-size: 50px;
+}
+
+.dilivery {
+    margin: 50px 0;
+}
+.dilivery h4{
+    font-weight: bold;
+    text-align: center;
+}
+
+.dilivery p{
+    text-align: center;
+    padding: 15px;
+
+}
+
+.AboutStore{
+    display: flex;
+    flex-direction: column;
+}
+
+.statics{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+.AboutStore h4{
+    text-align: center;
+}
+.static_card{
+    display: flex;
+    flex-direction: row;
+}
+.statics .number{
+    font-weight: bold;
+    font-size:2rem;
+
+}
+
+.statics .statics_title{
+    font-size:1.5rem;
+    padding: 5px 10px;
+   
+}
+
+
+.catalog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 25px;
+}
+
+.catalog h3{
+   margin: auto;    
+}
+.catalog_list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 820px;
+    padding: 15px;
+    margin: 20px auto;
+    
+}
+.catalog_list a{
+  width: 200px;
+  height: 60px;
+   border: 1px solid #ddd;
+   text-align: center;
+   padding: 15px 0;
+   margin: 15px;
+
+    
+}
+.ortahisse{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    margin: 0 200px 0 0 ;
+}
+
+.ortahisse h1{
+    padding: 25px 0;
+    
+}
+
+.ortahisse input {
+    width: 400px;
+    height: 70px;
+    padding: 15px;
+    
+}
+
+button#btnSearch{
+    width: 400px;
+    height: 70px;
+    padding: 10px;
+    margin-top: 25px;
+    background-color: #FF8B00;
+    font-weight: bold;
+    color: white;
+    border: none;
+    
+}
+
+.center_side{
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 300px;
+}
+.box{
+    width: 500px;
+}
+/****slider*****/
+a{
+    text-decoration: none;
+}
+.box{
+    width: 500px;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.slide-img{
+    margin: 20px 30px;
+    height: 450px;
+}
+.slide-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+.detail-box{
+width: 100%;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+padding: 10px 20px;
+box-sizing: border-box;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.type{
+    display: flex;
+    flex-direction: column;
+}
+.type a{
+    color: #222222;
+    margin:5px 0px ;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding-right: 8px;
+    display: block;
+}
+#yazici{
+    color: rgba(26,26,26,0.5);
+}
+.readMore{
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    font-family: poppins;
+    letter-spacing: 0.5px;
+    padding: 15px;
+    width: 480px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: cadetblue;
+
+   
+}
+
+.readMore:hover{
+    opacity: 0.5;
+}
