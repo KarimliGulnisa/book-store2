@@ -20,7 +20,7 @@ const firebaseConfig = {
     onValue(ref(db,"users/"),(snapshot=>{
     var data=snapshot.val() 
     var value=Object.values(data)
-        
+    $("#tBody").empty();
     for (let i=0; i<value.length;i++){
 
 
