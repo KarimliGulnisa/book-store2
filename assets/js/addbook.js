@@ -49,14 +49,31 @@ const Store = () => {
         console.log(res);
         res?.map((item) => {
           var li = document.createElement("li");
-          li.innerHTML = item?.title;
-          li.id = item?.id;
+          var image = document.createElement("img");
+          var bookInfo = document.createElement("p");
+          var text = document.createElement("p");
+          var author = document.createElement("p");
+          var year = document.createElement("p");
+          //   --------------------------
+          image.src = item?.smallImageURL;
+          text.innerHTML = item?.title;
+          author.innerHTML = item?.author;
+          year.innerHTML = item?.publicationYear;
+          text.id = item?.id;
+          li.classList = "search-results";
+          //   --------------------------
           li.addEventListener("click", () => {
             inputName.value = item.title;
             inputAuthor.value = item.author;
             inputImg.value = item.smallImageURL;
             publicationYear.value = item.publicationYear;
           });
+          //   --------------------------
+          li.appendChild(image);
+          bookInfo.appendChild(text);
+          bookInfo.appendChild(author);
+          bookInfo.appendChild(year);
+          li.appendChild(bookInfo);
           datalist.appendChild(li);
         });
       })
