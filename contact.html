@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Home</title>
+    <script type="module">
+        import {start} from './assets/js/contact.js';
+        start();
+    </script>
+</head>
+
+<body>
+<div class="container" >
+        <nav class="navbar navbar-expand-lg mt-3 ml-3 px-0 navbar-white bg-white">
+             
+            <img src="assets/img/logo-color.svg " class="" alt="">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav margin-right">
+                <a class="nav-item nav-link active" id="a_items" href="contact.html">Home <span
+                class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" id="a_items" href="catalog.html">Catalog</a>
+                <a class="nav-item nav-link" id="a_items" href="about.html">About Store</a>
+                <a class="nav-item nav-link" id="a_items" href="contact.html">Contact Us</a>
+                <a class="nav-item nav-link" id="a_items" href="search.html">Search</a>
+            </div>
+           <div class="d-flex mt-3 ml-auto" data-toggle="modal" data-target="#exampleModal" style="cursor: pointer;">
+               <img src="assets/img/loginlogo.png" class="mt-1" style="width: 20;height: 20px;" alt="">
+               <p>Join</p>
+           </div>
+
+        </nav>
+    
+    
+
+
+  
+  <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        
+            <div class="modal-body">
+                <h1 class="text-center p-3">Join Us</h1>
+                <div class="container p-3">
+                    <form>
+                        <div class="form-group">
+                        <input type="text" id="jName" class="form-control form-control-lg " placeholder="Full Name" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
+                        <input type="email" id="jMail" placeholder="Email" class="form-control form-control-lg mt-2" id="exampleInputPassword1">
+                        </div>
+                        
+                        
+                    </form>
+                <button type="button" id="btn_l" class="btn btn-lg mb-3 mt-2" style="background-color:#fd7e14;width: 100%; color: white;">Join</button>
+                <div id='success'></div>
+
+                </div>
+            </div>
+            
+        </div>
+        </div>
+    </div>
+
+    <!----Join form finish-->
+  
+    <!-------------------------------------------------------------------->
+    
+        
+        
+            <div class="container mt-5 mb-5" style="margin-top: 110px;">
+                <h2 class="pb-3">Contact Us</h2>
+                    <div class="form-group d-flex">
+                        <input type="text" class="form-control form-control-lg " style="width:50%;" placeholder="Full Name" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="email" placeholder="Email" class="form-control form-control-lg ml-5"style="width: 50%;" id="exampleInputPassword1">
+                    </div>
+                    <div class="form-group d-flex">
+                        <input type="text" placeholder="Adress" class="form-control form-control-lg " style="width:50%;" id="exampleInputPassword1">
+                    
+                        <input type="tel" placeholder="Phone Number" class="form-control form-control-lg ml-5" style="width:50%;" id="exampleInputPassword1">
+                    </div>
+                    <button id="btnSend"  class="btn btn-primary">Send</button>
+
+                </div>
+            
+        
+        
+    
+
+   
+
+
+    
+    <div class="contact_sosial_media_profiles m-auto">
+        <h4>Follow us on social media</h4>
+        <div class="ml-4">
+        <div class="row">
+            <a href="https://facebook.com/" class="col-4"> <i class='bx bxl-facebook-circle'></i></a>
+            <a href="https://tvitter.com/"class="col-4"><i class='bx bxl-twitter'></i></a>
+            <a href="https://instagram.com/"class="col-4"><i class='bx bxl-instagram'></i></a>
+        </div>
+    </div>
+    </div>
+
+
+    <!-------------------------------------------------------------------->
+    
+</div>
+<footer>
+    <div class="footer-logo"> <img src="assets/img/adminpanellogo.png" alt="">
+        <h5>Book Store LIBRARY</h5>
+    </div>
+
+    <div class="popular">
+        <h4>Popular</h4>
+        <a href="#">A second item</a>
+        <a href="#">A third item</a>
+        <a href="#">And a fifth one</a>
+    </div>
+    <div class="information">
+        <h4>Popular</h4>
+        <a href="#">A second item</a>
+        <a href="#">A third item</a>
+        <a href="#">And a fifth one</a>
+    </div>
+    <div class="help">
+        <h4>Popular</h4>
+        <a href="#">A second item</a>
+        <a href="#">A third item</a>
+        <a href="#">And a fifth one</a>
+    </div>
+
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- <script src="js/contact.js"></script> -->
+</body>
+
+</html>
