@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="assets/css/addbook.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Add Book</title>
-    <script type="module">
+    <!-- <script type="module">
       import { Store } from "./js/addBook.js";
 
       Store();
+    </script> -->
+    <script type="module">
+      import { start } from "./js/admin.js";
+
+      start();
     </script>
   </head>
 
@@ -120,6 +125,7 @@
             placeholder="Publication Year"
           />
         </div>
+
         <!-- 
         <div class="checbox_new">
           <input type="checkbox" name="" id="new" value="New" />
