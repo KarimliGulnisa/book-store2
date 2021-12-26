@@ -36,7 +36,22 @@ const firebaseConfig = {
 }))
             
      
-    
+    onValue(ref(db,"contactUsers"),snapshot=>{
+        var data=snapshot.val()
+        var value=Object.values(data)
+        $(".contact-data").empty();
+        for(let i=0; i<value.length;i++){
+            var contactData=` <tr>
+            <th>${i+1}</th>
+            <th>${value[i].name}</th>
+            <th>${value[i].email}</th>
+            <th>${value[i].adress}</th>
+            <th>${value[i].tel}</th>
+          </tr>`  
+        $(".contact-data").append(contactData);
+
+        }
+    })
    
     
  
