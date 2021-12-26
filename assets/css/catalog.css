@@ -3,6 +3,96 @@
     padding: 0;
    box-sizing: border-box;
 }
+
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar
+{
+  width: 6px;
+  height: 6px;
+  margin-top: 20px;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background-color: #720418;
+  border-radius: 10px;
+}
+
+.main-bgColor {
+    background-color: #FFFAF5;
+}
+
+.btn-color{
+    background-color: #E16A00;
+}
+.slick-prev:before, .slick-next:before{
+    color: black!important;
+}
+
+.main {
+    background-color: black;
+    font-family:Arial;
+    width:500px;
+    display:block;
+    margin:0 auto;
+  }
+  h3 {
+      background: #fff;
+      color: #3498db;
+      font-size: 36px;
+      line-height: 100px;
+      margin: 10px;
+      padding: 2%;
+      position: relative;
+      text-align: center;
+  }
+
+.slider {
+    background-color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider ul {
+    list-style: none;
+}
+.slider a{
+    text-decoration: none;
+}
+.box{
+    width: 184px;
+    height: 332px;
+    border: 1px solid lightgray;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+    background-color: white
+}
+
+.box h6{
+    margin-bottom: 5px;
+}
+
+.box p{
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.catalogMenu button{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 a#a_items{
     color: black !important;
     text-decoration: none !important;
