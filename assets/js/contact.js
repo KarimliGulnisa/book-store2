@@ -57,54 +57,14 @@ function start(){
                             </div>`) 
                       setTimeout(function () {
                         $("#success").html("")
-                      })
+                      },3000)
                     })
                       
-        //   onValue(ref(db,"join/"),(snapshot=>{
-        //     data=snapshot.val()
-        //     // join.push()
-            
-        //  })) 
-        //    function writeUserData( name, email) {
-        //     set(ref(db, 'join/'), {
-        //       username: name,
-        //       email: email,
-             
-        //     });
-            
-        //   }
-      
-        //   var data;
-
-        // function addData(name,email) {
-        //       join.push({
-        //           name:jName,
-        //           email:jMail
-        //       })
-        //       set(ref(db,"join/"),join)
-        // } 
-        // if(data=null){
-        //   writeUserData(jName,jMail)
-        // } else{
-          // addData(jName,jMail)
-          
-          // console.log(data)
         
-          
-        //   
         
-         $("#success").html(`<div class="alert alert-success" role="alert">
-         Məlumat uğurla göndərildi
-       </div>`) 
         
        
-      //  setTimeout(function () {
-      //   $("#jMail").val("");
-      //   $("#jName").val("");
-      //   $("#success").html("")
-      //  },3000)
-       
-       
+  
 }
     })
     
