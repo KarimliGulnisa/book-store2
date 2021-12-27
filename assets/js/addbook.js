@@ -7,12 +7,13 @@ import {
   onValue,
 } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 const firebaseConfig = {
-  apiKey: "AIzaSyChzfVr5MW4H_nNB_rUXV0bI0tQroDK6oY",
-  authDomain: "bookstore-web-31a0c.firebaseapp.com",
-  projectId: "bookstore-web-31a0c",
-  storageBucket: "bookstore-web-31a0c.appspot.com",
-  messagingSenderId: "603055803097",
-  appId: "1:603055803097:web:d2f24a4c15a5f317f9ccc8",
+  apiKey: "AIzaSyCCNWSgMgTn4qKB3wOwPvxcML9y-d0TWKk",
+  authDomain: "book-store-878e9.firebaseapp.com",
+  databaseURL: "https://book-store-878e9-default-rtdb.firebaseio.com",
+  projectId: "book-store-878e9",
+  storageBucket: "book-store-878e9.appspot.com",
+  messagingSenderId: "120141196387",
+  appId: "1:120141196387:web:992cff5603e82473f39c56"
 };
 const Store = () => {
   const app = initializeApp(firebaseConfig);

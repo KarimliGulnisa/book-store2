@@ -35,7 +35,7 @@ const firebaseConfig = {
                }
             })
         })
-        $(".nav_items_text").click(()=>{
+        $(".logout").click(()=>{
             localStorage.removeItem("admin")
         })
              
