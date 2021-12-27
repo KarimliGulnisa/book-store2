@@ -24,11 +24,10 @@ const firebaseConfig = {
   // Initialize Firebase
  
 function start(){
-  var join=[]
+
   const app = initializeApp(firebaseConfig);
 
   const db = getDatabase(app);
-  var i=0
     $('#btn_l').click(function () {
       
       
