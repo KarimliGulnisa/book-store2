@@ -8,8 +8,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Admin</title>
     <script type="module">
-      import { Store } from "./assets/js/addbook.js";
-      import { start } from "./assets/js/admin.js";
+      import { Store } from "./admin/assets/js/addbook.js";
+      import { start } from "./admin/assets/js/admin1.js";
       Store();
       start();
     </script>
@@ -37,28 +37,28 @@
           <div class="icon_menu">
             <img src="assets/img/adminpanellogo.png" alt="" />
           </div>
-          <h4 class="nav_items_text"><a href="">Home</a></h4>
+          <h4 class="nav_items_text"><a href="#bookForm">Home</a></h4>
         </div>
 
         <div class="nav_item">
           <div class="icon_menu">
             <img src="assets/img/adminpanellogo.png" alt="" />
           </div>
-          <h4 class="nav_items_text"><a href="">About</a></h4>
+          <h4 class="nav_items_text"><a href="#aboutStore">About</a></h4>
         </div>
 
         <div class="nav_item">
           <div class="icon_menu">
             <img src="assets/img/adminpanellogo.png" alt="" />
           </div>
-          <h4 class="nav_items_text"><a href="">Join Us</a></h4>
+          <h4 class="nav_items_text"><a href="#joinUs">Join Us</a></h4>
         </div>
 
         <div class="nav_item">
           <div class="icon_menu">
             <img src="assets/img/adminpanellogo.png" alt="" />
           </div>
-          <h4 class="nav_items_text"><a href="">Contact</a></h4>
+          <h4 class="nav_items_text"><a href="#contactUS">Contact</a></h4>
         </div>
 
         <div class="nav_item">
@@ -90,8 +90,8 @@
         <ul class="datalist" style="display: none"></ul>
       </div>
 
-      <div class="book_form">
-        <h4>Book Form</h4>
+      <div class="book_form" id="bookForm">
+        <h3>Book Form</h3>
         <div class="error" style="color: red; display: none">
           Please fill all fields
         </div>
@@ -132,25 +132,49 @@
         </div>
 
         <div class="book_form_items">
-          <label for="BookType">Book Type</label>
-          <div class="book-type_items">
-            <select name="" id="BookType" placeholder="Book Type">
-              <option id="Bestseller" value="Bestseller">Bestseller</option>
-              <option id="Fantastic" value="Fantastic">Fantastic</option>
-              <option id="Baby" value="Baby">Baby</option>
-              <option id="Development" value="Development">Development</option>
-              <option id="Dedectivs" value="Dedectivs">Dedectivs</option>
-              <option id="Classik" value="Classik">Classik</option>
-              <option id="Klassik" value="Klassik">Klassik</option>
-            </select>
-            <button><span class="book-type_plus"> + </span></button>
+          <div class="book-type_items" style="position: relative">
+            <label for="BookType">Book Type</label>
+
+            <button class="book-type_btn"><span> + </span></button>
+            <div
+              class="dropdown-menu shadow show"
+              style="display: none"
+              id="css_cs_pointer"
+              x-placement="right-start"
+            >
+              <div class="form-group p-1 cs_cursor" id="css_cs_pointer">
+                <label for="addType">Add type</label>
+                <input
+                  type="text"
+                  class="form-control cs_cursor"
+                  id="addType"
+                  name="publicationYear"
+                />
+                <button
+                  id="addTypeBtn"
+                  class="btn btn-outline-warning mt-3 btn-block"
+                  style="cursor: pointer"
+                >
+                  ADD
+                </button>
+              </div>
+            </div>
           </div>
+          <select name="" id="BookType" placeholder="Book Type">
+            <option id="Bestseller" value="Bestseller">Bestseller</option>
+            <option id="Fantastic" value="Fantastic">Fantastic</option>
+            <option id="Baby" value="Baby">Baby</option>
+            <option id="Development" value="Development">Development</option>
+            <option id="Dedectivs" value="Dedectivs">Dedectivs</option>
+            <option id="Classik" value="Classik">Classik</option>
+            <option id="Klassik" value="Klassik">Klassik</option>
+          </select>
         </div>
 
         <button class="btnAddBook">Add</button>
       </div>
 
-      <div class="store_form">
+      <div class="store_form" id="aboutStore">
         <h4>About Store</h4>
         <div class="store_form_items">
           <label for="Title">Title</label>
@@ -180,7 +204,7 @@
         <button class="btnAboutInfoAdd">About Info Add</button>
       </div>
 
-      <table class="join_us">
+      <table class="join_us" id="joinUs">
         <h3>Join Us</h3>
         <thead>
           <tr>
@@ -192,7 +216,7 @@
         <tbody id="tBody"></tbody>
       </table>
 
-      <table class="Contact_us">
+      <table class="Contact_us" id="contactUS">
         <h3>Contact Us</h3>
         <thead>
           <tr>
