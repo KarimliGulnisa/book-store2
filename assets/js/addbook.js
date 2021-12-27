@@ -7,18 +7,15 @@ import {
   onValue,
 } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 const firebaseConfig = {
-  apiKey: "AIzaSyChzfVr5MW4H_nNB_rUXV0bI0tQroDK6oY",
-  authDomain: "bookstore-web-31a0c.firebaseapp.com",
-  projectId: "bookstore-web-31a0c",
-  storageBucket: "bookstore-web-31a0c.appspot.com",
-  messagingSenderId: "603055803097",
-  appId: "1:603055803097:web:d2f24a4c15a5f317f9ccc8",
+  apiKey: "AIzaSyCCNWSgMgTn4qKB3wOwPvxcML9y-d0TWKk",
+  authDomain: "book-store-878e9.firebaseapp.com",
+  databaseURL: "https://book-store-878e9-default-rtdb.firebaseio.com",
+  projectId: "book-store-878e9",
+  storageBucket: "book-store-878e9.appspot.com",
+  messagingSenderId: "120141196387",
+  appId: "1:120141196387:web:992cff5603e82473f39c56",
 };
 const Store = () => {
-  const app = initializeApp(firebaseConfig);
-  var database = getDatabase(app);
-
-  const allBooks = [];
   const search = document.querySelector("#search");
   const inputName = document.querySelector("#bookName");
   const inputAuthor = document.querySelector("#AuthorName");
@@ -31,39 +28,77 @@ const Store = () => {
   const datalist = document.querySelector(".datalist");
 
   search.onkeyup = (e) => {
+    datalist.style.display = "block";
     datalist.innerHTML = "";
-    fetch("https://goodreads-books.p.rapidapi.com/search?q=" + e.target.value, {
-      method: "GET",
-      headers: {
-        "x-rapidapi-host": "goodreads-books.p.rapidapi.com",
-        "x-rapidapi-key": "9d9588302emsh58804fa5a30d4d9p1b947ajsn659ea6ae2269",
-      },
-      data: {
-        q: e.target.value,
-      },
-    })
-      .then((res) => {
-        return res.json();
-      })
-      .then((res) => {
-        console.log(res);
-        res?.map((item) => {
-          var li = document.createElement("li");
-          li.innerHTML = item?.title;
-          li.id = item?.id;
-          li.addEventListener("click", () => {
-            inputName.value = item.title;
-            inputAuthor.value = item.author;
-            inputImg.value = item.smallImageURL;
-            publicationYear.value = item.publicationYear;
+
+    var KeyID = e.keyCode;
+
+    KeyID === 8 || KeyID === 46
+      ? (datalist.style.display = "none")
+      : fetch(
+          "https://goodreads-books.p.rapidapi.com/search?q=" + e.target.value,
+          {
+            method: "GET",
+            headers: {
+              "x-rapidapi-host": "goodreads-books.p.rapidapi.com",
+              "x-rapidapi-key":
+                "9d9588302emsh58804fa5a30d4d9p1b947ajsn659ea6ae2269",
+            },
+            data: {
+              q: e.target.value,
+            },
+          }
+        )
+          .then((res) => {
+            res
+              ? (datalist.style.display = "block")
+              : (datalist.style.display = "none");
+            return res.json();
+          })
+          .then((res) => {
+            res?.map((item) => {
+              var li = document.createElement("li");
+              var image = document.createElement("img");
+              var bookInfo = document.createElement("p");
+              var text = document.createElement("p");
+              var author = document.createElement("p");
+              var year = document.createElement("p");
+              //   --------------------------
+              image.src = item?.smallImageURL;
+              text.innerHTML = item?.title;
+              author.innerHTML = item?.author;
+              year.innerHTML = item?.publicationYear;
+              text.id = item?.id;
+              li.classList = "search-results";
+              //   --------------------------
+              li.addEventListener("click", () => {
+                search.value = "";
+                datalist.innerHTML = "";
+                datalist.style.display = "none";
+
+                inputName.value = item.title;
+                inputAuthor.value = item.author;
+                inputImg.value = item.smallImageURL;
+                publicationYear.value = item.publicationYear;
+              });
+              //   --------------------------
+              li.appendChild(image);
+              bookInfo.appendChild(text);
+              bookInfo.appendChild(author);
+              bookInfo.appendChild(year);
+              li.appendChild(bookInfo);
+              datalist.appendChild(li);
+            });
+          })
+          .catch((err) => {
+            console.error(err);
           });
-          datalist.appendChild(li);
-        });
-      })
-      .catch((err) => {
-        console.error(err);
-      });
   };
+
+  // -------------FireBase-----------
+
+  const app = initializeApp(firebaseConfig);
+  var database = getDatabase(app);
 
   const addBook = () => {
     const book = {
@@ -72,7 +107,6 @@ const Store = () => {
       image: inputImg.value,
       description: inputDescription.value,
       type: inputType.value,
-      id: push(ref(database, "/")).key,
     };
     if (
       !inputName.value ||
@@ -83,23 +117,34 @@ const Store = () => {
     ) {
       error.style.display = "block";
     } else {
-      allBooks.push(book);
-      set(ref(database, "/"), { allBooks });
+      set(push(ref(database, "books")), {
+        name: inputName.value,
+        author: inputAuthor.value,
+        image: inputImg.value,
+        description: inputDescription.value,
+        type: inputType.value,
+        id: push(ref(database, "books")).key,
+      });
       error.style.display = "none";
+      (inputName.value = ""),
+        (inputAuthor.value = ""),
+        (inputImg.value = ""),
+        (inputDescription.value = ""),
+        (inputType.value = ""),
+        (publicationYear.value = "");
     }
-
-    (inputName.value = ""),
-      (inputAuthor.value = ""),
-      (inputImg.value = ""),
-      (inputDescription.value = ""),
-      (inputType.value = "");
   };
 
   btn.addEventListener("click", addBook);
 
+  //---------------burdan
+
   onValue(ref(database, "/"), (snapshot) => {
-    console.log("snapshot:", snapshot.val());
+    const allBooks = Object.values(snapshot.val().books);
+    console.log("allBooks:", allBooks);
   });
+
+  // -----------------bura
 };
 
 export { Store };

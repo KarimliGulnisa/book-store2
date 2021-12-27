@@ -6,15 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/addbook.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Add Book</title>
-    <!-- <script type="module">
-      import { Store } from "./js/addBook.js";
-
-      Store();
-    </script> -->
+    <title>Admin</title>
     <script type="module">
-      import { start } from "./js/admin.js";
-
+      import { Store } from "./assets/js/addbook.js";
+      import { start } from "./assets/js/admin.js";
+      Store();
       start();
     </script>
   </head>
@@ -88,14 +84,18 @@
           type="text"
           id="search"
           list="variants"
-          placeholder="Kitab adini qeyd edin"
+          placeholder="Search for books by title"
           style="width: 50%"
         />
-        <ul class="datalist"></ul>
+        <ul class="datalist" style="display: none"></ul>
       </div>
 
       <div class="book_form">
         <h4>Book Form</h4>
+        <div class="error" style="color: red; display: none">
+          Please fill all fields
+        </div>
+
         <div class="book_form_items">
           <label for="bookName">Book Name</label>
           <input type="text" name="" id="bookName" placeholder="Book Name" />
@@ -125,28 +125,26 @@
             placeholder="Publication Year"
           />
         </div>
-        <!-- 
-        <div class="checbox_new">
-          <input type="checkbox" name="" id="new" value="New" />
-          <label for="new">New</label>
-        </div> -->
 
         <div class="book_form_items">
           <label for="Description">Description</label>
-          <textarea name="" id="Description" cols="30" rows="20"></textarea>
+          <textarea name="" id="Description" cols="30" rows="10"></textarea>
         </div>
 
         <div class="book_form_items">
           <label for="BookType">Book Type</label>
-          <select name="" id="BookType" placeholder="Book Type">
-            <option id="Bestseller" value="Bestseller">Bestseller</option>
-            <option id="Fantastic" value="Fantastic">Fantastic</option>
-            <option id="Baby" value="Baby">Baby</option>
-            <option id="Development" value="Development">Development</option>
-            <option id="Dedectivs" value="Dedectivs">Dedectivs</option>
-            <option id="Classik" value="Classik">Classik</option>
-            <option id="Klassik" value="Klassik">Klassik</option>
-          </select>
+          <div class="book-type_items">
+            <select name="" id="BookType" placeholder="Book Type">
+              <option id="Bestseller" value="Bestseller">Bestseller</option>
+              <option id="Fantastic" value="Fantastic">Fantastic</option>
+              <option id="Baby" value="Baby">Baby</option>
+              <option id="Development" value="Development">Development</option>
+              <option id="Dedectivs" value="Dedectivs">Dedectivs</option>
+              <option id="Classik" value="Classik">Classik</option>
+              <option id="Klassik" value="Klassik">Klassik</option>
+            </select>
+            <button><span class="book-type_plus"> + </span></button>
+          </div>
         </div>
 
         <button class="btnAddBook">Add</button>
@@ -191,10 +189,7 @@
             <th>Email-Adress</th>
           </tr>
         </thead>
-        <tbody id="tBody">
-          
-
-        </tbody>
+        <tbody id="tBody"></tbody>
       </table>
 
       <table class="Contact_us">
@@ -258,6 +253,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script src="js/addbook.js"></script>
+    <script src="./assets/js/addbook.js"></script>
   </body>
 </html>
