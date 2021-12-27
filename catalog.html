@@ -13,7 +13,10 @@
     <!-- <link rel="stylesheet" href="./assets/css/lightslider.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css"/>
-
+    <script type="module">
+        import {start} from './assets/js/contact.js';
+        start();
+    </script>
     <title>Home</title>
     <script type="module">
         import { Catalog } from "./assets/js/catalog.js";
@@ -23,29 +26,62 @@
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-white bg-white">
-        <img src="img/.png" alt="">
-        <a class="navbar-brand" href="#">Libray Book Store</a>
-
+    <div class="container">
+        <nav class="navbar navbar-expand-lg mt-3 ml-3 px-0 navbar-white bg-white">
+                 
+            <img src="assets/img/logo-color.svg " class="" alt="">
+    
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav margin-right">
-                <a class="nav-item nav-link active" id="a_items" href="index.html">Home <span
-                        class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" id="a_items" href="catalog.html">Catalog</a>
-                <a class="nav-item nav-link" id="a_items" href="about.html">About Store</a>
-                <a class="nav-item nav-link" id="a_items" href="contact.html">Contact Us</a>
-                <a class="nav-item nav-link" id="a_items" href="search.html">Search</a>
+            <div class="navbar-nav m-auto ">
+                <a class="nav-item nav-link active link-color"     href="contact.html">Home <span
+                class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link link-color"  href="catalog.html">Catalog</a>
+                <a class="nav-item nav-link link-color"  href="about.html">About Store</a>
+                <a class="nav-item nav-link link-color"  href="contact.html">Contact Us</a>
+                <a class="nav-item nav-link link-color"  href="search.html">Search</a>
             </div>
-        </div>
-    </nav>
-    <hr>
-    <!-------------------------------------------------------------------->
-
+            <div class="d-flex mt-3 ml-auto" data-toggle="modal" data-target="#exampleModal" style="cursor: pointer;">
+                <img src="assets/img/loginlogo.png" class="mt-1" style="width: 20;height: 20px;" alt="">
+                <p>Join</p>
+            </div>
+ 
+         </nav>
+     
+     
+ </div>
+ 
+   <hr> 
+   <!-- Modal -->
+     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+         <div class="modal-content">
+         
+             <div class="modal-body">
+                 <h1 class="text-center p-3">Join Us</h1>
+                 <div class="container p-3">
+                     <form>
+                         <div class="form-group">
+                         <input type="text" id="jName" class="form-control form-control-lg " placeholder="Full Name" id="exampleInputEmail1" aria-describedby="emailHelp">
+                         </div>
+                         <div class="form-group">
+                         <input type="email" id="jMail" placeholder="Email" class="form-control form-control-lg mt-2" id="exampleInputPassword1">
+                         </div>
+                         
+                         
+                     </form>
+                 <button type="button" id="btn_l" class="btn btn-lg mb-3 mt-2" style="background-color:#fd7e14;width: 100%; color: white;">Join</button>
+                 <div id='success'></div>
+ 
+                 </div>
+             </div>
+             
+         </div>
+         </div>
+     </div>
     <div class="container">
         <div class="row">
             <div class="col-md-4">

@@ -1,38 +1,76 @@
-var interval;
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+import {getDatabase, ref, set,push,onValue } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 
-$("#title").on("input", function () {
-  var title = $(this).val();
-  var yazici = document.querySelector("#yazici");
-  var kitabin_adi = document.querySelector("#kitabin_adi");
-  var yazici = document.querySelector("#yazici");
-  var cover = document.querySelector("#cover");
-  clearInterval(interval);
-  interval = setTimeout(() => {
-    fetch("https://goodreads-books.p.rapidapi.com/search?q=" + title, {
-      method: "GET",
-      headers: {
-        "x-rapidapi-host": "goodreads-books.p.rapidapi.com",
-        "x-rapidapi-key": "9d9588302emsh58804fa5a30d4d9p1b947ajsn659ea6ae2269",
-      },
-      data: {
-        q: title,
-        page: 1,
-      },
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        $("#title-choices").empty();
-        for (let kitab of response) {
-          let title = kitab.title;
-          yazici.innerHTML = kitab.author;
-          kitabin_adi.innerHTML = kitab.title;
-          cover.src = kitab.smallImageURL;
-          $("#basliqlar").append(
-            '<option value="' + title + '">' + title + "</option>"
-          );
+// const database = getDatabase();
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyCCNWSgMgTn4qKB3wOwPvxcML9y-d0TWKk",
+    authDomain: "book-store-878e9.firebaseapp.com",
+    databaseURL: "https://book-store-878e9-default-rtdb.firebaseio.com",
+    projectId: "book-store-878e9",
+    storageBucket: "book-store-878e9.appspot.com",
+    messagingSenderId: "120141196387",
+    appId: "1:120141196387:web:992cff5603e82473f39c56"
+  };
+
+  // Initialize Firebase
+ 
+function search(){
+  const app = initializeApp(firebaseConfig);
+  var db = getDatabase(app);
+
+  $(".search-b").click(()=>{
+
+    onValue(ref(db, "/"), (snapshot) => {
+      const allBooks = Object.values(snapshot.val().books);
+      // console.log("allBooks:", allBooks);
+      var searchInput=$(".searchInput").val();
+      
+        for(let i=0;i<allBooks.length;i++){
+          console.log(allBooks[i].name)
+         
+          
+          // console.log("allBooks:", allBooks[i].name);
+          if (searchInput===allBooks[i].name) {
+
+            var searchData=`<div class="carousel-item active">
+            <div class="card mb-3 col-6 ml-auto mt-5 " style="max-width: 100%;height: 504px;">              
+            <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="${allBooks[i].image}" style="width:100% " alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">${allBooks[i].name}</h5>
+                <p class="card-text">${allBooks[i].author}</p>
+                <p class="card-text">${allBooks[i].description}</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>`
+          $(".search-card").append(searchData)
+          }
+
         }
-      });
-  }, 1000);
-});
+          
+  
+    });
+  })
+
+
+
+
+
+
+
+
+
+  
+}
+export{
+  search
+}
