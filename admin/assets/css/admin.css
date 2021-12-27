@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #720418;
+}
+
+.admin_logo_side{
+    display: flex;
+    margin: 80px 40px;
+}
+.logo_admin_card{
+    width: 66px;
+    height: 66px;
+}
+
+.logo_admin_card img{
+    width: 100%;
+    height: 100%;
+}
+.h3_card{
+    display: flex;
+    flex-direction:column;
+    color: white;
+    margin: 10px;
+}
+
+.admin_panel_giris_formu{
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    height: 300px;
+    background-color: white;
+    justify-content: space-evenly;
+    margin: auto;
+}
+.h2ucun{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2.welcome_text{
+    padding: 15px;
+    text-align: center;
+}
+.admin-panel{
+    width: 100%;
+}
+.admin_panel_giris_formu input{
+    width: 320px;
+    height: 40px;
+    margin: 10px auto ;
+    padding: 5px;
+
+}
+
+.admin_panel_giris_formu button{
+    width: 320px;
+    height: 40px;
+    margin: 10px auto ;
+    padding: 5px;
+    background-color: #E16A00;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.admin_panel_giris_formu button:hover{
+    opacity: 0.5;
+}
