@@ -47,6 +47,11 @@
 
 .nav_items_text {
   padding: 10px;
+  font-size: 18px;
+}
+
+.nav_items_text > a:hover {
+  color: #fff !important;
 }
 
 a {

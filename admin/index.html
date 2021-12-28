@@ -16,8 +16,10 @@
 
     <script type="module">
       import { Store } from "./assets/js/addbook.js";
+      import { About } from "./assets/js/about.js";
       import { start } from "./assets/js/admin1.js";
       Store();
+      About();
       start();
     </script>
   </head>
@@ -30,50 +32,52 @@
         <button id="type_Close">Close</button>
       </div>
       <div class="admin_panel_right_side">
-        <div class="admin_logo_side">
-          <div class="logo_admin_card">
-            <img src="assets/img/adminpanellogo.png" alt="" />
-          </div>
-          <div class="h3_card">
-            <h3 class="library">LIBRARY</h3>
-            <hr />
-            <h3 class="admin_panel">ADMIN PANEL</h3>
-          </div>
-        </div>
-        <div class="menu_right">
-          <div class="nav_item">
-            <div class="icon_menu">
+        <div style="position: fixed; margin-left: 30px">
+          <div class="admin_logo_side">
+            <div class="logo_admin_card">
               <img src="assets/img/adminpanellogo.png" alt="" />
             </div>
-            <h4 class="nav_items_text"><a href="">Home</a></h4>
+            <div class="h3_card">
+              <h5 class="library" style="border-bottom: 2px solid">LIBRARY</h5>
+              <hr />
+              <h5 class="admin_panel" style="margin-top: -24px">Admin Panel</h5>
+            </div>
           </div>
+          <div class="menu_right">
+            <div class="nav_item">
+              <div class="icon_menu">
+                <img src="assets/img/adminpanellogo.png" alt="" />
+              </div>
+              <h4 class="nav_items_text"><a href="#bookForm">Home</a></h4>
+            </div>
 
-          <div class="nav_item">
-            <div class="icon_menu">
-              <img src="assets/img/adminpanellogo.png" alt="" />
+            <div class="nav_item">
+              <div class="icon_menu">
+                <img src="assets/img/adminpanellogo.png" alt="" />
+              </div>
+              <h4 class="nav_items_text"><a href="#aboutStore">About</a></h4>
             </div>
-            <h4 class="nav_items_text"><a href="">About</a></h4>
-          </div>
 
-          <div class="nav_item">
-            <div class="icon_menu">
-              <img src="assets/img/adminpanellogo.png" alt="" />
+            <div class="nav_item">
+              <div class="icon_menu">
+                <img src="assets/img/adminpanellogo.png" alt="" />
+              </div>
+              <h4 class="nav_items_text"><a href="#joinUs">Join Us</a></h4>
             </div>
-            <h4 class="nav_items_text"><a href="">Join Us</a></h4>
-          </div>
 
-          <div class="nav_item">
-            <div class="icon_menu">
-              <img src="assets/img/adminpanellogo.png" alt="" />
+            <div class="nav_item">
+              <div class="icon_menu">
+                <img src="assets/img/adminpanellogo.png" alt="" />
+              </div>
+              <h4 class="nav_items_text"><a href="#contactUs">Contact</a></h4>
             </div>
-            <h4 class="nav_items_text"><a href="">Contact</a></h4>
-          </div>
 
-          <div class="nav_item">
-            <div class="icon_menu">
-              <img src="assets/img/adminpanellogo.png" alt="" />
+            <div class="nav_item">
+              <div class="icon_menu">
+                <img src="assets/img/adminpanellogo.png" alt="" />
+              </div>
+              <h4 class="logout nav_items_text"><a href="">Logout</a></h4>
             </div>
-            <h4 class="logout"><a href="">Logout</a></h4>
           </div>
         </div>
       </div>
@@ -87,7 +91,7 @@
       </div>
 
       <div class="add_book_form_1">
-        <h3>Add Book</h3>
+        <h3 style="margin-bottom: 25px" id="bookForm">Home</h3>
         <h4>Search Book</h4>
         <input
           class="form-control"
@@ -206,7 +210,7 @@
         <button class="btnAddBook">Add</button>
       </div>
 
-      <div class="store_form">
+      <div class="store_form" id="aboutStore">
         <h4>About Store</h4>
         <div class="store_form_items">
           <label for="Title">Title</label>
@@ -214,7 +218,7 @@
             class="form-control"
             type="text"
             name=""
-            id="Title"
+            id="aboutTitle"
             placeholder="Title"
           />
         </div>
@@ -225,7 +229,7 @@
             class="form-control"
             type="text"
             name=""
-            id="BookImageUrl"
+            id="aboutBookImageUrl"
             placeholder="BookImageUrl"
           />
         </div>
@@ -236,7 +240,7 @@
             class="form-control"
             type="text"
             name=""
-            id="Description"
+            id="aboutDescription"
             placeholder="Description"
           />
         </div>
@@ -244,7 +248,7 @@
         <button class="btnAboutInfoAdd">About Info Add</button>
       </div>
 
-      <table class="join_us">
+      <table class="join_us" id="joinUs">
         <h3>Join Us</h3>
         <thead>
           <tr>
@@ -256,7 +260,7 @@
         <tbody id="tBody"></tbody>
       </table>
 
-      <table class="Contact_us">
+      <table class="Contact_us" id="contactUs">
         <h3>Contact Us</h3>
         <thead>
           <tr>

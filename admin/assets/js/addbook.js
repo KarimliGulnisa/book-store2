@@ -73,6 +73,7 @@ const Store = () => {
             return res.json();
           })
           .then((res) => {
+            console.log(res);
             res?.map((item) => {
               var li = document.createElement("li");
               var image = document.createElement("img");
