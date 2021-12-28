@@ -39,13 +39,13 @@ const firebaseConfig = {
             localStorage.removeItem("admin")
         })
              
-        onValue(ref(db,"users/"),(snapshot=>{
+        onValue(ref(db,"users"),(snapshot=>{
             var data=snapshot.val() 
             var value=Object.values(data)
             $("#tBody").empty();
             for (let i=0; i<value.length;i++){
-        
-        
+                console.log(value[i].fullname)
+                
                 var tableJoin=$(`<tr>
                 <th>${i+1}</th>
                 <th>${value[i].fullname}</th>

@@ -13,11 +13,11 @@ a#a_items{
 .link-color{
     color:#343a40!important
 }
-/* a{
+a{
     text-decoration: none;
     color: #720418;
     font-weight: bold;
-} */
+}
 
 a#a_items:hover{
     color: #E16A00;
