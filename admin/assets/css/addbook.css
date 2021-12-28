@@ -257,9 +257,9 @@ textarea {
 .datalist {
   width: 55rem;
   height: 13.7rem;
-  background-color: #ccc;
+  background-color: #e7e7e7;
   overflow: auto;
-  padding: 3px 0.2rem;
+  padding: 0 0.2rem;
   position: absolute;
   border: 1px solid #ddd;
   border-radius: 15px;
@@ -275,7 +275,7 @@ li {
   border-radius: 10px;
 }
 li:hover {
-  background-color: #40e0d0a2;
+  background-color: #bbbbbb6c;
 }
 
 .search-results > p > p {
@@ -316,4 +316,33 @@ div.book-type_btn {
   top: 0px;
   left: 0px;
   padding: 3px 15px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  transform: translate3d(128px, 16px, 0px);
+  top: 0px;
+  left: 0px;
+  padding: 3px 15px;
+}
+.spinner-border {
+  position: absolute;
+  left: 45%;
+  top: 30%;
+  width: 70px;
+  height: 70px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #720418;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 35px #fff;
+  border-radius: 3px;
 }
