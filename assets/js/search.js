@@ -27,34 +27,40 @@ function search(){
     onValue(ref(db, "/"), (snapshot) => {
       const allBooks = Object.values(snapshot.val().books);
       // console.log("allBooks:", allBooks);
-      var searchInput=$(".searchInput").val();
-      
+      var searchInput=$(".searchInput").val().trim();
+        $(".search-card").empty()
         for(let i=0;i<allBooks.length;i++){
-          console.log(allBooks[i].name)
+          // console.log(allBooks[i].name)
          
-          
+          // console.log(searchInput)
+          var book=allBooks[i].name.trim().toLowerCase();
           // console.log("allBooks:", allBooks[i].name);
-          if (searchInput===allBooks[i].name) {
+        
+          if (allBooks[i].name.trim().includes(searchInput) && searchInput.length>0|| book.includes(searchInput) && searchInput.length>0) {
+            $(".alert").addClass("d-none")
+            $(".carousel").removeClass("d-none")
+            var searchData=`<div class="carousel-item mt-3" style="width:100%" >
+            <div class="w-100 d-flex justify-content-between align-item-center">
 
-            var searchData=`<div class="carousel-item active">
-            <div class="card mb-3 col-6 ml-auto mt-5 " style="max-width: 100%;height: 504px;">              
-            <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="${allBooks[i].image}" style="width:100% " alt="...">
+            <img src="${allBooks[i].image}" class="d-block w-50 h-100" alt="...">
+            <div class="ml-3 w-50">
+            <h4>${allBooks[i].name}</h4>
+            <p class="mt-3">${allBooks[i].author}</p>
+            <p style="max-height:220px; text-overflow: ellipsis;overflow: hidden;">${allBooks[i].description}</p>
+            </div>  
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">${allBooks[i].name}</h5>
-                <p class="card-text">${allBooks[i].author}</p>
-                <p class="card-text">${allBooks[i].description}</p>
-              </div>
-            </div>
-          </div>
-          </div>
           </div>`
-          $(".search-card").append(searchData)
+          
+          } 
+          else{
+            $(".carousel").addClass("d-none")
+            $(".alert").removeClass("d-none")
+              
           }
-
+        
+          $(".search-card").append(searchData)
+          $('.carousel-item').first().addClass('active');
+          
         }
           
   
