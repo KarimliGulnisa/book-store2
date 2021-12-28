@@ -120,9 +120,8 @@ h3 {
   width: 900px;
   height: 1050px;
   margin: 30px 0;
-  padding: 25px;
+  padding: 0 5px;
   justify-content: space-evenly;
-  background-color: turquoise;
   border-radius: 20px;
   margin-bottom: 120px;
 }
@@ -252,37 +251,64 @@ textarea {
 
 .datalist {
   width: 55rem;
-  height: 14.2rem;
-  background-color: #ddd;
+  height: 13.7rem;
+  background-color: #ccc;
   overflow: auto;
-  padding: 0.2rem;
+  padding: 3px 0.2rem;
   position: absolute;
   border: 1px solid #ddd;
-  margin: 10px 0;
   border-radius: 15px;
   box-shadow: 2px 2px 2px rgb(0 0 0 / 50%);
 }
 
 li {
   background-color: #fff;
-  padding: 0.2rem;
+  padding: 0.2rem 0.4rem;
   margin: 0.2rem;
   cursor: pointer;
   display: flex;
+  border-radius: 10px;
 }
 li:hover {
   background-color: #40e0d0a2;
 }
 
 .search-results > p > p {
-  padding: 2px;
+  padding: 0 2px;
   font-family: sans-serif;
-  font-size: 15px;
+  font-size: 13px;
+  margin-bottom: 0 !important;
 }
 
 .search-results > img {
   width: 42px;
 }
+.search-results > p {
+  margin-bottom: 0 !important;
+}
 .book-type_items {
   display: flex;
+}
+
+div.book-type_btn {
+  font-size: 30px;
+  color: green;
+  border: 0px;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 0px 15px;
+}
+
+.book-type_main {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  transform: translate3d(128px, 16px, 0px);
+  top: 0px;
+  left: 0px;
+  padding: 3px 15px;
 }
