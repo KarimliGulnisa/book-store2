@@ -26,6 +26,23 @@ const Store = () => {
   const btn = document.querySelector(".btnAddBook");
   const error = document.querySelector(".error");
   const datalist = document.querySelector(".datalist");
+  const typBtn = document.querySelector(".book-type_btn");
+  const dropDown = document.querySelector(".dropdown-menu");
+  const addType = document.querySelector("#addTypeBtn");
+  const formControl = document.querySelector(".form-control");
+
+  const addBtnType = () => {
+    var option = document.createElement("option");
+    option.innerHTML = formControl.value;
+    inputType.appendChild(option);
+    dropDown.style.display = "none";
+  };
+
+  const toggle = () => {
+    dropDown.style.display === "none"
+      ? (dropDown.style.display = "block")
+      : (dropDown.style.display = "none");
+  };
 
   search.onkeyup = (e) => {
     datalist.style.display = "block";
@@ -56,6 +73,7 @@ const Store = () => {
             return res.json();
           })
           .then((res) => {
+            console.log(res);
             res?.map((item) => {
               var li = document.createElement("li");
               var image = document.createElement("img");
@@ -136,6 +154,8 @@ const Store = () => {
   };
 
   btn.addEventListener("click", addBook);
+  typBtn.addEventListener("click", toggle);
+  addType.addEventListener("click", addBtnType);
 
   //---------------burdan
 

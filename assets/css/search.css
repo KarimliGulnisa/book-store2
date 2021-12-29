@@ -3,11 +3,15 @@
     padding: 0;
    box-sizing: border-box;
 }
+
 a#a_items{
     color: black !important;
     text-decoration: none !important;
     font-weight: bold;
     padding: 0 20px;
+}
+.link-color{
+    color:#343a40!important
 }
 a{
     text-decoration: none;

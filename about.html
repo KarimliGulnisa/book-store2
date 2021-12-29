@@ -1,151 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/about.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/about.css" />
     <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script type="module">
+      import { About } from "./assets/js/about.js";
+      About();
+      import { start } from "./assets/js/contact.js";
+      start();
+    </script>
     <title>Home</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg mt-3 ml-3 px-0 navbar-white bg-white">
+               
+          <img src="assets/img/logo-color.svg " class="" alt="">
+  
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto ">
+              <a class="nav-item nav-link active link-color"     href="index.html">Home <span
+              class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link link-color"  href="catalog.html">Catalog</a>
+              <a class="nav-item nav-link "  href="about.html">About Store</a>
+              <a class="nav-item nav-link link-color"  href="contact.html">Contact Us</a>
+              <a class="nav-item nav-link link-color"  href="search.html">Search</a>
+          </div>
+          <div class="d-flex mt-3 ml-auto" data-toggle="modal" data-target="#exampleModal" style="cursor: pointer;">
 
-    <nav class="navbar navbar-expand-lg navbar-white bg-white">
-        <img src="assets/img/Vector.png" alt="">
-        <a class="navbar-brand" href="#">Libray Book Store</a>
+              <img src="assets/img/loginlogo.png" class="mt-1" style="width: 20;height: 20px;" alt="">
+              <p>Join</p>
+          </div>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav margin-right">
-                <a class="nav-item nav-link active" id="a_items" href="index.html">Home <span
-                class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" id="a_items" href="catalog.html">Catalog</a>
-                <a class="nav-item nav-link" id="a_items" href="about.html">About Store</a>
-                <a class="nav-item nav-link" id="a_items" href="contact.html">Contact Us</a>
-                <a class="nav-item nav-link" id="a_items" href="search.html">Search</a>
-            </div>
-        </div>
-        <!----Join form start-->
-        <div  class="btn_login_join d-flex" data-toggle="modal" data-target="#exampleModal" style="cursor: pointer;">
-            <div class="for_icon_join_0"><img src="assets/img/loginlogo.png" alt=""></div>
-            <button id="btn_login_join">Join</button>
-        </div>
-    </nav>
-    
-    
+       </nav>
+   
+   
+</div>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
         <div class="modal-content">
-        
-            <div class="modal-body">
-                <h1 class="text-center p-3">Join Us</h1>
-                <div class="container p-3">
-                    <form>
-                        <div class="form-group">
-                        <input type="text" id="jName" class="form-control form-control-lg " placeholder="Full Name" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        </div>
-                        <div class="form-group">
-                        <input type="email" id="jMail" placeholder="Email" class="form-control form-control-lg mt-2" id="exampleInputPassword1">
-                        </div>
-                        
-                        
-                    </form>
-                <button type="button" id="btn_l" class="btn btn-lg mb-3 mt-2" style="background-color:#fd7e14;width: 100%; color: white;">Join</button>
-                <div id='success'></div>
-
+          <div class="modal-body">
+            <h1 class="text-center p-3">Join Us</h1>
+            <div class="container p-3">
+              <form>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="jName"
+                    class="form-control form-control-lg"
+                    placeholder="Full Name"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                  />
                 </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    id="jMail"
+                    placeholder="Email"
+                    class="form-control form-control-lg mt-2"
+                    id="exampleInputPassword1"
+                  />
+                </div>
+              </form>
+              <button
+                type="button"
+                id="btn_l"
+                class="btn btn-lg mb-3 mt-2"
+                style="background-color: #fd7e14; width: 100%; color: white"
+              >
+                Join
+              </button>
+              <div id="success"></div>
             </div>
-            
+          </div>
         </div>
-        </div>
+      </div>
     </div>
 
     <!----Join form finish-->
 
-    <hr>
+    <hr />
     <!-------------------------------------------------------------------->
+
     <div class="ortahisse">
-        <div class="book_A-Z">
-            <h1>Books from A to Z</h1>
-            <p>We work without holidays and weekends! Residents of Kiev can receive an order on the day of its
-                registration. Customers from other cities of Ukraine can receive an order within 1-5 days, depending on
-                the location of the settlement and the selected delivery method. Orders over UAH 1000 are delivered free
-                of charge *. You can see the available methods, exact terms and cost of delivery during checkout in the
-                order basket, after selecting the delivery city.
-            </p>
+      <div class="book_A-Z">
+        <h1 class="aboutTitle"></h1>
+        <p class="description"></p>
+      </div>
 
+      <div class="book_panel">
+        <div class="for_img">
+          <img class="image" src="" alt="" />
         </div>
-
-        <div class="book_panel">
-            <div class="for_img">
-                <img src="assets/img/images.jpg" alt="">
-            </div>
-        </div>
-
+      </div>
     </div>
-
-
-
-
 
     <div class="contact_sosial_media_profiles">
-        <h4>Follow us on social media</h4>
-        <div class="sosial_media_card">
-            <a href="https://facebook.com/"> <i class='bx bxl-facebook-circle'></i></a>
-            <a href="https://tvitter.com/"><i class='bx bxl-twitter'></i></a>
-            <a href="https://instagram.com/"><i class='bx bxl-instagram'></i></a>
-        </div>
+      <h4>Follow us on social media</h4>
+      <div class="sosial_media_card">
+        <a href="https://facebook.com/">
+          <i class="bx bxl-facebook-circle"></i
+        ></a>
+        <a href="https://tvitter.com/"><i class="bx bxl-twitter"></i></a>
+        <a href="https://instagram.com/"><i class="bx bxl-instagram"></i></a>
+      </div>
     </div>
-
 
     <!-------------------------------------------------------------------->
     <footer>
-        <div class="footer-logo"> <img src="assets/img/adminpanellogo.png" alt="">
-            <h5>Book Store LIBRARY</h5>
-        </div>
+      <div class="footer-logo">
+        <img src="assets/img/adminpanellogo.png" alt="" />
+        <h5>Book Store LIBRARY</h5>
+      </div>
 
-        <div class="popular">
-            <h4>Popular</h4>
-            <a href="#">A second item</a>
-            <a href="#">A third item</a>
-            <a href="#">And a fifth one</a>
-        </div>
-        <div class="information">
-            <h4>Popular</h4>
-            <a href="#">A second item</a>
-            <a href="#">A third item</a>
-            <a href="#">And a fifth one</a>
-        </div>
-        <div class="help">
-            <h4>Popular</h4>
-            <a href="#">A second item</a>
-            <a href="#">A third item</a>
-            <a href="#">And a fifth one</a>
-        </div>
-
+      <div class="popular">
+        <h4>Popular</h4>
+        <a href="#">A second item</a>
+        <a href="#">A third item</a>
+        <a href="#">And a fifth one</a>
+      </div>
+      <div class="information">
+        <h4>Popular</h4>
+        <a href="#">A second item</a>
+        <a href="#">A third item</a>
+        <a href="#">And a fifth one</a>
+      </div>
+      <div class="help">
+        <h4>Popular</h4>
+        <a href="#">A second item</a>
+        <a href="#">A third item</a>
+        <a href="#">And a fifth one</a>
+      </div>
     </footer>
 
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
     <script src="js/about.js"></script>
-</body>
-
+  </body>
 </html>
