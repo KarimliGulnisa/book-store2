@@ -35,7 +35,8 @@ function start(){
          var jName=$("#jName").val().trim();
          if(jMail=="" || jName==""){
           $("#success").html(`<div class="alert alert-danger" role="alert">
-          Zəhmət olmasa məlumatlarınızı daxil edin
+          <h4>Error</h4>
+                Please check form
         </div>`) 
         setTimeout(function () {
          $("#success").html("")
@@ -52,7 +53,7 @@ function start(){
                       $("#jName").val("")
                       $("#success").html("")
                       $("#success").html(`<div class="alert alert-success" role="alert">
-                              Məlumat uğurla göndərildi
+                      Form sent successfully
                             </div>`) 
                       setTimeout(function () {
                         $("#success").html("")
@@ -74,7 +75,8 @@ function start(){
 
         if(contactName=="" || contactEmail==""||contactAdress=="" || contactTel==""){
           $("#contact-alert").html(`<div class="alert alert-danger" role="alert">
-          Zəhmət olmasa məlumatlarınızı daxil edin
+          <h4>Error</h4>
+                Please check form
         </div>`) 
         setTimeout(function () {
          $("#contact-alert").html("")
@@ -94,7 +96,7 @@ function start(){
                       $(".contact-adress").val("")
                       $(".contact-tel").val("")
                       $("#contact-alert").html(`<div class="alert alert-success" role="alert">
-                              Məlumat uğurla göndərildi
+                          Form  sent successfully
                             </div>`) 
                       setTimeout(function () {
                         $("#contact-alert").html("")
