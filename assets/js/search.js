@@ -37,6 +37,7 @@ function search(){
           // console.log("allBooks:", allBooks[i].name);
         
           if (allBooks[i].name.trim().includes(searchInput) && searchInput.length>0|| book.includes(searchInput) && searchInput.length>0) {
+            console.log(allBooks[i].name)
             $(".alert").addClass("d-none")
             $(".carousel").removeClass("d-none")
             var searchData=`<div class="carousel-item mt-3" style="width:100%" >
@@ -52,17 +53,17 @@ function search(){
           </div>`
           
           } 
-          else{
-            $(".carousel").addClass("d-none")
-            $(".alert").removeClass("d-none")
-              
-          }
+         
         
           $(".search-card").append(searchData)
           $('.carousel-item').first().addClass('active');
           
         }
-          
+        if($(".search-card").html()==""){
+          $(".carousel").addClass("d-none")
+          $(".alert").removeClass("d-none")
+            
+        }
   
     });
   })

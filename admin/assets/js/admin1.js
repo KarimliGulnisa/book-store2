@@ -32,6 +32,16 @@ const firebaseConfig = {
                    $(".admin_panel_left_side").removeClass("d-none")
                     localStorage.setItem("admin",`{"name":${data.login},
                     "password":${data.password}`)
+                    
+               }
+               else{
+                $("#success").html(`<div class="alert alert-danger" role="alert">
+                <h4>Error</h4>
+                Please check form
+              </div>`) 
+              setTimeout(function () {
+               $("#success").html("")
+              },2000)
                }
             })
         })
