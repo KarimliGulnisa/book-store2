@@ -64,8 +64,116 @@ function Catalog() {
       //     }
       //   }
       // });
+//       console.log(allBooks)
+//       var x={
 
-      function All() {
+//       }
+   
+//       localStorage.setItem("x",x)
+//       $("#All").on("click",function(){
+//         $('.owl-carousel').trigger('stop.owl.autoplay');
+
+//         for (var i in allBooks) {
+          
+        
+//         console.log(allBooks[i], 'all');
+//         var content = `
+//         <div class= "item">
+//              <div class="box m-auto text-center pt-3 pb-1">
+//                  <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
+//                 <div class="details w-75 m-auto">
+//                     <h6 class="mt-3">${allBooks[i].name}</h6>
+//                     <p>${allBooks[i].author}</p>
+//                     <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
+//                 </div>
+//             </div>
+//         </div>`;
+//         $('.owl-carousel').append(content);
+//       }
+//       $('.owl-carousel').owlCarousel({
+//         loop:true,
+//         margin:10,
+//         nav:true,
+//         responsive:{
+//             0:{
+//                 items:1
+//             },
+//             600:{
+//                 items:3
+//             },
+//             1000:{
+//                 items:5
+//             }
+//         }
+//     })
+    
+//   }) ;
+      
+   
+    
+//  $('#Fantastic').on('click',function(){
+
+//   $('.owl-carousel').trigger('stop.owl.autoplay');
+
+//    $(".owl-carousel").empty();
+//       for (var i in allBooks) {
+//             if (allBooks[i].type === 'Fantastic') {
+//               console.log(allBooks[i], 'fantastik');
+//               var content = `
+//               <div class= "item">
+//              <div class="box m-auto text-center pt-3 pb-1">
+//                  <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
+//                 <div class="details w-75 m-auto">
+//                     <h6 class="mt-3">${allBooks[i].name}</h6>
+//                     <p>${allBooks[i].author}</p>
+//                     <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
+//                 </div>
+//             </div>
+//         </div>
+//               `;
+
+//               $('.owl-carousel').append(content);
+//             }
+            
+//           }
+//           $('.owl-carousel').owlCarousel({
+//             loop:true,
+//             margin:10,
+//             nav:true,
+//             responsive:{
+//                 0:{
+//                     items:1
+//                 },
+//                 600:{
+//                     items:3
+//                 },
+//                 1000:{
+//                     items:5
+//                 }
+//             }
+//         })
+            
+//     })
+    function getSlider() {
+      return {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        // asNavFor: '.slider-for',
+        dots: false,
+        focusOnSelect: true,
+        responsive: [
+          {
+            breakpoint: 1100,
+            settings: {
+              slidesPerRow: 2,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+      };
+    }
+    function myFunc() {
+      
       for (var i in allBooks) {
         console.log(allBooks[i], 'all');
         var content = `
@@ -79,35 +187,16 @@ function Catalog() {
                 </div>
             </div>
         </div>`;
-        $('.owl-carousel').append(content);
+        $('.slider').append(content);
       }
-      $(".owl-carousel").owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: true,
-        navText: [
-          "<i class='fa fa-caret-left'></i>",
-          "<i class='fa fa-caret-right'></i>"
-        ],
-        autoplay: true,
-        autoplayHoverPause: true,
-        responsive: {
-          0: {
-            items: 1
-          },
-          600: {
-            items: 3
-          },
-          1000: {
-            items: 5
-          }
-        }
-      });
+      $('.slider-nav').slick(getSlider());
     }
-    All()
-    
- $('#Fantastic').on('click',function(){
+    myFunc();
+    $('#Fantastic').on('click',function(){
+      window.location.reload()
+     
       for (var i in allBooks) {
+        
             if (allBooks[i].type === 'Fantastic') {
               console.log(allBooks[i], 'fatastik');
               var content = `
@@ -116,203 +205,108 @@ function Catalog() {
                        <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
                       <div class="details w-75 m-auto">
                           <h6 class="mt-3">${allBooks[i].name}</h6>
-                          <p>${allBooks[i].author}</p>
+                          <p>${allBooks[i].type}</p>
                           <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
                       </div>
                   </div>
               </div>`;
 
-              $('.owl-carousel').append(content);
+              $('.slider').append(content);
+              $(".slider-nav").slick('unslick')
+              // $(".slider-nav").html(content);
+              $(".slider-nav").not('.slick-initialized').slick(getSlider());
             }
-            
           }
-          $(".owl-carousel").owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            navText: [
-              "<i class='fa fa-caret-left'></i>",
-              "<i class='fa fa-caret-right'></i>"
-            ],
-            autoplay: true,
-            autoplayHoverPause: true,
-            responsive: {
-              0: {
-                items: 1
-              },
-              600: {
-                items: 3
-              },
-              1000: {
-                items: 5
-              }
-            }
-          });
+    Bestseller()
+
+          window.stop()
+      return false
+
             
     })
-    // function getSlider() {
-    //   return {
-    //     slidesToShow: 4,
-    //     slidesToScroll: 1,
-    //     // asNavFor: '.slider-for',
-    //     dots: false,
-    //     focusOnSelect: true,
-    //     responsive: [
-    //       {
-    //         breakpoint: 1100,
-    //         settings: {
-    //           slidesPerRow: 2,
-    //           slidesToScroll: 1,
-    //         },
-    //       },
-    //     ],
-    //   };
-    // }
-    // function myFunc() {
-      
-    //   for (var i in allBooks) {
-    //     console.log(allBooks[i], 'all');
-    //     var content = `
-    //     <div class= "item">
-    //          <div class="box m-auto text-center pt-3 pb-1">
-    //              <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
-    //             <div class="details w-75 m-auto">
-    //                 <h6 class="mt-3">${allBooks[i].name}</h6>
-    //                 <p>${allBooks[i].author}</p>
-    //                 <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
-    //             </div>
-    //         </div>
-    //     </div>`;
-    //     $('.slider').append(content);
-    //   }
-    //   $('.slider-nav').slick(getSlider());
-    // }
-    // myFunc();
-    // $('#Fantastic').on('click',function(){
+ 
+    function Bestseller(){
 
-    //   for (var i in allBooks) {
-    //         if (allBooks[i].type === 'Fantastic') {
-    //           console.log(allBooks[i], 'fatastik');
-    //           var content = `
-    //           <div class= "item">
-    //                <div class="box m-auto text-center pt-3 pb-1">
-    //                    <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
-    //                   <div class="details w-75 m-auto">
-    //                       <h6 class="mt-3">${allBooks[i].name}</h6>
-    //                       <p>${allBooks[i].author}</p>
-    //                       <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
-    //                   </div>
-    //               </div>
-    //           </div>`;
+      for (var i in allBooks) {
+        if (allBooks[i].type === 'Bestseller') {
+          // console.log(allBooks[i], 'best');
+          var content = `
+          <div class= "item">
+               <div class="box m-auto text-center pt-3 pb-1">
+                   <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
+                  <div class="details w-75 m-auto">
+                      <h6 class="mt-3">${allBooks[i].name}</h6>
+                      <p>${allBooks[i].type}</p>
+                      <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
+                  </div>
+              </div>
+          </div>`;
 
-    //           $('.slider').append(content);
-    //           $(".slider-nav").slick('unslick')
-    //           $(".slider-nav").html(content);
-    //           $(".slider-nav").not('.slick-initialized').slick(getSlider());
-    //         }
-            
-    //       }
-            
-    // })
-
-    // function Bestseller(){
-    //   for (var i in allBooks) {
-    //     if (allBooks[i].type === 'Bestseller') {
-    //       console.log(allBooks[i], 'best');
-    //       var content = `
-    //       <div class= "item">
-    //            <div class="box m-auto text-center pt-3 pb-1">
-    //                <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
-    //               <div class="details w-75 m-auto">
-    //                   <h6 class="mt-3">${allBooks[i].name}</h6>
-    //                   <p>${allBooks[i].author}</p>
-    //                   <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
-    //               </div>
-    //           </div>
-    //       </div>`;
-
-    //       $('.besteller').append(content);
-    //       $(".slider-nav").slick('unslick')
-    //       $(".slider-nav").html(content);
-    //       $(".slider-nav").not('.slick-initialized').slick(getSlider());
-    //     }
+          $('.besteller').append(content);
+          $(".slider-nav").slick('unslick')
+          // $(".slider-nav").html(content);
+          $(".slider-nav").not('.slick-initialized').slick(getSlider());
+        }
         
-    //   }
-    // }
+      }
+   
+    }
+    $("#bestseller").click(function () {
+      window.location.reload()
 
-    // Bestseller()
+      for (var i in allBooks) {
+        if (allBooks[i].type === 'Bestseller') {
+          // console.log(allBooks[i], 'best');
+          var content = `
+          <div class= "item">
+               <div class="box m-auto text-center pt-3 pb-1">
+                   <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
+                  <div class="details w-75 m-auto">
+                      <h6 class="mt-3">${allBooks[i].name}</h6>
+                      <p>${allBooks[i].type}</p>
+                      <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
+                  </div>
+              </div>
+          </div>`;
 
-    // $('#Fantastic').click(function Fantastic() {
-    //   for (var i in allBooks) {
-    //     if (allBooks[i].type === 'Fantastic') {
-    //       console.log(allBooks[i], 'fatastik');
-    //       var content = `
-    //       <div class= "item">
-    //            <div class="box m-auto text-center pt-3 pb-1">
-    //                <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
-    //               <div class="details w-75 m-auto">
-    //                   <h6 class="mt-3">${allBooks[i].name}</h6>
-    //                   <p>${allBooks[i].author}</p>
-    //                   <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
-    //               </div>
-    //           </div>
-    //       </div>`;
-    //       $('.slider').append(content);
-    //     }
-    //   }
-    //   $('.slider-nav').slick({
-    //     slidesToShow: 4,
-    //     slidesToScroll: 1,
-    //     asNavFor: '.slider-for',
-    //     dots: false,
-    //     focusOnSelect: true,
-    //   });
+          $('.slider').append(content);
+          $(".slider-nav").slick('unslick')
+          // $(".slider-nav").html(content);
+          $(".slider-nav").not('.slick-initialized').slick(getSlider());
+        }
+        
+      }
+      window.stop()
 
-    //   $('.slider').slick('unslick');
-    //   // $(".slider").html(data);
-    //   $('.slider').not('.slick-initialized').slick({
-    //     slidesToShow: 4,
-    //     slidesToScroll: 1,
-    //     asNavFor: '.slider-for',
-    //     dots: false,
-    //     focusOnSelect: true,
-    //   });
-    // });
+    })
+    Bestseller()
 
-    // $('#All').click(function All() {
-    //   for (var i in allBooks) {
-    //     console.log(allBooks[i], 'all');
-    //     var content = `
-    //       <div class= "item">
-    //            <div class="box m-auto text-center pt-3 pb-1">
-    //                <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
-    //               <div class="details w-75 m-auto">
-    //                   <h6 class="mt-3">${allBooks[i].name}</h6>
-    //                   <p>${allBooks[i].author}</p>
-    //                   <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
-    //               </div>
-    //           </div>
-    //       </div>`;
-    //     $('.slider').append(content);
-    //   }
-    //   $('.slider-nav').slick({
-    //     slidesToShow: 4,
-    //     slidesToScroll: 1,
-    //     asNavFor: '.slider-for',
-    //     dots: false,
-    //     focusOnSelect: true,
-    //   });
 
-    //   $('.slider').slick('unslick');
-    //   // $(".slider").html(data);
-    //   $('.slider').not('.slick-initialized').slick({
-    //     slidesToShow: 4,
-    //     slidesToScroll: 1,
-    //     asNavFor: '.slider-for',
-    //     dots: false,
-    //     focusOnSelect: true,
-    //   });
-    // });
+    $('#All').click(function All() {
+      window.location.reload()
+      for (var i in allBooks) {
+        console.log(allBooks[i], 'all');
+        var content = `
+          <div class= "item">
+               <div class="box m-auto text-center pt-3 pb-1">
+                   <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
+                  <div class="details w-75 m-auto">
+                      <h6 class="mt-3">${allBooks[i].name}</h6>
+                      <p>${allBooks[i].author}</p>
+                      <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
+                  </div>
+              </div>
+          </div>`;
+        $('.slider').append(content);
+      }
+      $('.slider-nav').slick(getSlider());
+
+      $('.slider').slick('unslick');
+      // $(".slider").html(data);
+      $(".slider-nav").not('.slick-initialized').slick(getSlider());
+
+    });
+    window.stop()
   });
 }
 
