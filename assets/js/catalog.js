@@ -40,7 +40,7 @@ function Catalog (){
               },
             },
            
-          ],
+          ]
       });
      
       $('a[data-slide]').click(function(e) {
@@ -57,7 +57,20 @@ function Catalog (){
   onValue(ref(database, "/"), (snapshot) => {
     const allBooks = Object.values(snapshot.val().books);
 
-    console.log("allBooks:", allBooks);
+    for(let i=0;i<allBooks.length;i++){
+      var slide=$("<div class='item '>").html(`
+                    <div class="box m-auto text-center pt-3 pb-1">
+                        <img class="mb-3 m-auto" src="${allBooks[i].image}" alt="This is book">
+                        <div class="details w-75 m-auto">
+                            <h6 class="mt-3">${allBooks[i].name}</h6>
+                            <p>${allBooks[i].author}</p>
+                            <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
+                        </div>
+                    </div>
+                </div>`)
+      
+      $(".slickslide").append(slide)
+    }
    
     
   });
