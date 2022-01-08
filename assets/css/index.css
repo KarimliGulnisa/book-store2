@@ -135,14 +135,7 @@ footer{
 .catalog h3{
    margin: auto;    
 }
-.catalog_list{
-    display: flex;
-    flex-wrap: wrap;
-    width: 820px;
-    padding: 15px;
-    margin: 20px auto;
-    
-}
+
 .catalog_list a{
   width: 200px;
   height: 60px;
