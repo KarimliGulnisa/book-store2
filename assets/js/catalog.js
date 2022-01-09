@@ -33,11 +33,19 @@ function Catalog() {
         // asNavFor: '.slider-for',
         dots: false,
         focusOnSelect: true,
-        responsive: [
+        responsive:[
           {
-            breakpoint: 1100,
+            breakpoint: 1024,
             settings: {
-              slidesPerRow: 2,
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              adaptiveHeight: true,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
               slidesToScroll: 1,
             },
           },
