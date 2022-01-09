@@ -271,3 +271,9 @@ button#btnSearch{
     border: none;
     
 }
+
+.loading{
+    width: 400px;
+    height: 300px;
+}
+

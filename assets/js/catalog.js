@@ -15,145 +15,17 @@ const firebaseConfig = {
   messagingSenderId: '120141196387',
   appId: '1:120141196387:web:992cff5603e82473f39c56',
 };
+var a = 0;
 
 function Catalog() {
   const app = initializeApp(firebaseConfig);
   var database = getDatabase(app);
-
+ a= 1;
   onValue(ref(database, '/'), (snapshot) => {
     const allBooks = Object.values(snapshot.val().books);
 
     console.log('allBooks:', allBooks);
-
-    
-
-      // for (var i in allBooks) {
-      //   console.log(allBooks[i], 'all');
-      //   var content = `
-      //   <div class= "item">
-      //        <div class="box m-auto text-center pt-3 pb-1">
-      //            <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
-      //           <div class="details w-75 m-auto">
-      //               <h6 class="mt-3">${allBooks[i].name}</h6>
-      //               <p>${allBooks[i].author}</p>
-      //               <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
-      //           </div>
-      //       </div>
-      //   </div>`;
-      //   $('.owl-carousel').append(content);
-      // }
-      // $(".owl-carousel").owlCarousel({
-      //   loop: true,
-      //   margin: 10,
-      //   nav: true,
-      //   navText: [
-      //     "<i class='fa fa-caret-left'></i>",
-      //     "<i class='fa fa-caret-right'></i>"
-      //   ],
-      //   autoplay: true,
-      //   autoplayHoverPause: true,
-      //   responsive: {
-      //     0: {
-      //       items: 1
-      //     },
-      //     600: {
-      //       items: 3
-      //     },
-      //     1000: {
-      //       items: 5
-      //     }
-      //   }
-      // });
-//       console.log(allBooks)
-//       var x={
-
-//       }
-   
-//       localStorage.setItem("x",x)
-//       $("#All").on("click",function(){
-//         $('.owl-carousel').trigger('stop.owl.autoplay');
-
-//         for (var i in allBooks) {
-          
-        
-//         console.log(allBooks[i], 'all');
-//         var content = `
-//         <div class= "item">
-//              <div class="box m-auto text-center pt-3 pb-1">
-//                  <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
-//                 <div class="details w-75 m-auto">
-//                     <h6 class="mt-3">${allBooks[i].name}</h6>
-//                     <p>${allBooks[i].author}</p>
-//                     <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
-//                 </div>
-//             </div>
-//         </div>`;
-//         $('.owl-carousel').append(content);
-//       }
-//       $('.owl-carousel').owlCarousel({
-//         loop:true,
-//         margin:10,
-//         nav:true,
-//         responsive:{
-//             0:{
-//                 items:1
-//             },
-//             600:{
-//                 items:3
-//             },
-//             1000:{
-//                 items:5
-//             }
-//         }
-//     })
-    
-//   }) ;
-      
-   
-    
-//  $('#Fantastic').on('click',function(){
-
-//   $('.owl-carousel').trigger('stop.owl.autoplay');
-
-//    $(".owl-carousel").empty();
-//       for (var i in allBooks) {
-//             if (allBooks[i].type === 'Fantastic') {
-//               console.log(allBooks[i], 'fantastik');
-//               var content = `
-//               <div class= "item">
-//              <div class="box m-auto text-center pt-3 pb-1">
-//                  <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
-//                 <div class="details w-75 m-auto">
-//                     <h6 class="mt-3">${allBooks[i].name}</h6>
-//                     <p>${allBooks[i].author}</p>
-//                     <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
-//                 </div>
-//             </div>
-//         </div>
-//               `;
-
-//               $('.owl-carousel').append(content);
-//             }
-            
-//           }
-//           $('.owl-carousel').owlCarousel({
-//             loop:true,
-//             margin:10,
-//             nav:true,
-//             responsive:{
-//                 0:{
-//                     items:1
-//                 },
-//                 600:{
-//                     items:3
-//                 },
-//                 1000:{
-//                     items:5
-//                 }
-//             }
-//         })
-            
-//     })
+  
     function getSlider() {
       return {
         slidesToShow: 4,
@@ -172,127 +44,173 @@ function Catalog() {
         ],
       };
     }
+    var id;
+    function More(id){
+      $('.slider').hide();
+      var more = `
+      <div class="more container">
+      <div class="row">
+          <div class="col-md-7">
+              <button type="button" class="btn btn-md">Back</button>
+              <p>${year}</p>
+              <h1>${name}</h1>
+              <p>${author}</p>
+              <p>${description}</p>
+          </div>
+          <div class="col-md-5">
+              <img class="w-100 h-100"src=${image} alt="">
+          </div>
+      </div>
+    </div>
+      `
+      $('.slideContent').append(more);
+    }
     function myFunc() {
+        $('.loading').hide();
+        for (var i in allBooks) {
+          console.log(allBooks[i], 'all');
+
+          var content = `
+          <div class= "item">
+               <div class="box m-auto text-center pt-3 pb-1">
+                   <img class="mb-3 m-auto w-75 h-50" src=${allBooks[i].image} alt="This is book">
+                  <div class="details w-75 m-auto">
+                      <h6 class="mt-3">${(allBooks[i].name).slice(0,20)}...</h6>
+                      <p>${allBooks[i].author.slice(0,15)}...</p>
+                      <button type="button" class="btn btn-color w-100 text-light fw-bolder" id="readMore">READ MORE</button>
+                  </div>
+              </div>
+          </div>`;
+          $('.slider').append(content);
+          $('#readMore').click(console.log(allBooks[i].id));
+        }
+        $('.slider-nav').slick(getSlider());
+      
+        
+      
+    }
+
+    myFunc();
+
+    $('#Fantastic').on('click', function () {
+      window.location.reload();
       
       for (var i in allBooks) {
-        console.log(allBooks[i], 'all');
-        var content = `
-        <div class= "item">
-             <div class="box m-auto text-center pt-3 pb-1">
-                 <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
-                <div class="details w-75 m-auto">
-                    <h6 class="mt-3">${allBooks[i].name}</h6>
-                    <p>${allBooks[i].author}</p>
-                    <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
-                </div>
-            </div>
-        </div>`;
-        $('.slider').append(content);
-      }
-      $('.slider-nav').slick(getSlider());
-    }
-    myFunc();
-    $('#Fantastic').on('click',function(){
-      window.location.reload()
-     
-      for (var i in allBooks) {
-        
-            if (allBooks[i].type === 'Fantastic') {
-              console.log(allBooks[i], 'fatastik');
-              var content = `
+        if (allBooks[i].type === 'Fantastic') {
+          console.log(allBooks[i], 'fatastik');
+          var content = `
               <div class= "item">
                    <div class="box m-auto text-center pt-3 pb-1">
-                       <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
+                       <img class="mb-3 m-auto w-75 h-50" src=${allBooks[i].image} alt="This is book">
                       <div class="details w-75 m-auto">
-                          <h6 class="mt-3">${allBooks[i].name}</h6>
-                          <p>${allBooks[i].type}</p>
+                          <h6 class="mt-3">${(allBooks[i].name).slice(0,20)}...</h6>
+                          <p>${allBooks[i].author.slice(0,15)}</p>
                           <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
                       </div>
                   </div>
               </div>`;
 
-              $('.slider').append(content);
-              $(".slider-nav").slick('unslick')
-              // $(".slider-nav").html(content);
-              $(".slider-nav").not('.slick-initialized').slick(getSlider());
-            }
-          }
-    Bestseller()
+          $('.slider').append(content);
+          $('.slider-nav').slick('unslick');
+          $('.slider-nav').not('.slick-initialized').slick(getSlider());
+        }
+      }
+      Bestseller();
 
-          window.stop()
-      return false
+      window.stop();
+      return false;
+    });
 
-            
-    })
- 
-    function Bestseller(){
-
+    function Bestseller() {
+      
       for (var i in allBooks) {
         if (allBooks[i].type === 'Bestseller') {
-          // console.log(allBooks[i], 'best');
           var content = `
           <div class= "item">
                <div class="box m-auto text-center pt-3 pb-1">
-                   <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
+                   <img class="mb-3 m-auto w-75 h-50" src=${allBooks[i].image} alt="This is book">
                   <div class="details w-75 m-auto">
-                      <h6 class="mt-3">${allBooks[i].name}</h6>
-                      <p>${allBooks[i].type}</p>
+                      <h6 class="mt-3">${(allBooks[i].name).slice(0,20)}...</h6>
+                      <p>${allBooks[i].author.slice(0,15)}...</p>
                       <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
                   </div>
               </div>
           </div>`;
 
           $('.besteller').append(content);
-          $(".slider-nav").slick('unslick')
-          // $(".slider-nav").html(content);
-          $(".slider-nav").not('.slick-initialized').slick(getSlider());
+          $('.slider-nav').slick('unslick');
+          $('.slider-nav').not('.slick-initialized').slick(getSlider());
         }
-        
       }
-   
     }
-    $("#bestseller").click(function () {
-      window.location.reload()
-
+    $('#Bestseller').click(function () {
+      window.location.reload();
+      
       for (var i in allBooks) {
         if (allBooks[i].type === 'Bestseller') {
-          // console.log(allBooks[i], 'best');
           var content = `
           <div class= "item">
                <div class="box m-auto text-center pt-3 pb-1">
-                   <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
+                   <img class="mb-3 m-auto w-75 h-50" src=${allBooks[i].image} alt="This is book">
                   <div class="details w-75 m-auto">
-                      <h6 class="mt-3">${allBooks[i].name}</h6>
-                      <p>${allBooks[i].type}</p>
+                      <h6 class="mt-3">${(allBooks[i].name).slice(0,20)}...</h6>
+                      <p>${allBooks[i].author.slice(0,15)}...</p>
                       <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
                   </div>
               </div>
           </div>`;
 
           $('.slider').append(content);
-          $(".slider-nav").slick('unslick')
-          // $(".slider-nav").html(content);
-          $(".slider-nav").not('.slick-initialized').slick(getSlider());
+          $('.slider-nav').slick('unslick');
+          $('.slider-nav').not('.slick-initialized').slick(getSlider());
         }
-        
       }
-      window.stop()
+      window.stop();
+      
+    });
+    Bestseller();
 
-    })
-    Bestseller()
+    $('#Baby').on('click', function () {
+      window.location.reload();
+      
+      for (var i in allBooks) {
+        if (allBooks[i].type === 'Baby') {
+          console.log(allBooks[i], 'Baby');
+          var content = `
+              <div class= "item">
+                   <div class="box m-auto text-center pt-3 pb-1">
+                       <img class="mb-3 m-auto w-75 h-50" src=${allBooks[i].image} alt="This is book">
+                      <div class="details w-75 m-auto">
+                          <h6 class="mt-3">${(allBooks[i].name).slice(0,20)}...</h6>
+                          <p>${allBooks[i].author.slice(0,15)}</p>
+                          <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
+                      </div>
+                  </div>
+              </div>`;
 
+          $('.slider').append(content);
+          $('.slider-nav').slick('unslick');
+          $('.slider-nav').not('.slick-initialized').slick(getSlider());
+        }
+      }
+      Bestseller();
+
+      window.stop();
+      return false;
+    });
 
     $('#All').click(function All() {
-      window.location.reload()
+   
+      window.location.reload();
       for (var i in allBooks) {
         console.log(allBooks[i], 'all');
         var content = `
           <div class= "item">
                <div class="box m-auto text-center pt-3 pb-1">
-                   <img class="mb-3 m-auto w-75" src=${allBooks[i].image} alt="This is book">
+                   <img class="mb-3 m-auto w-75 h-50" src=${allBooks[i].image} alt="This is book">
                   <div class="details w-75 m-auto">
-                      <h6 class="mt-3">${allBooks[i].name}</h6>
-                      <p>${allBooks[i].author}</p>
+                      <h6 class="mt-3">${(allBooks[i].name).slice(0,20)}...</h6>
+                      <p>${allBooks[i].author.slice(0,15)}...</p>
                       <button type="button" class="btn btn-color w-100 text-light fw-bolder">READ MORE</button>
                   </div>
               </div>
@@ -300,13 +218,11 @@ function Catalog() {
         $('.slider').append(content);
       }
       $('.slider-nav').slick(getSlider());
-
       $('.slider').slick('unslick');
-      // $(".slider").html(data);
-      $(".slider-nav").not('.slick-initialized').slick(getSlider());
-
+      $('.slider-nav').not('.slick-initialized').slick(getSlider());
     });
-    window.stop()
+    window.stop();
+    
   });
 }
 
