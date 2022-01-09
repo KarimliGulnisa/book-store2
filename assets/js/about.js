@@ -16,11 +16,11 @@ const firebaseConfig = {
 const About = () => {
   const app = initializeApp(firebaseConfig);
   var database = getDatabase(app);
+  const aTitle = document.querySelector(".aboutTitle");
+  const aImage = document.querySelector(".image");
+  const aDescription = document.querySelector(".description");
 
   onValue(ref(database, "/about"), (snapshot) => {
-    const aTitle = document.querySelector(".aboutTitle");
-    const aImage = document.querySelector(".image");
-    const aDescription = document.querySelector(".description");
     const about = Object.values(snapshot.val());
     aTitle.innerHTML = about[2];
     aDescription.innerHTML = about[0];
