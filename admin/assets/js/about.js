@@ -40,14 +40,10 @@ const About = () => {
 
   btn.addEventListener("click", addStore);
 
-  //---------------burdan
-
   onValue(ref(database, "/"), (snapshot) => {
     const about = Object.values(snapshot.val().about);
     console.log("about:", about);
   });
-
-  // -----------------bura
 };
 
 export { About };
