@@ -50,7 +50,7 @@ footer{
     flex-direction: column;
     color: white;
     justify-content: space-evenly;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .popular a,.information a,.help a{
@@ -248,3 +248,6 @@ button#btnSend{
     height: 100%;
 }
 
+.navbar-toggler {
+    border-color: rgb(255,102,203);
+  } 

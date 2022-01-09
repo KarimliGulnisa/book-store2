@@ -90,7 +90,7 @@ function Catalog() {
       
     }
 
-    myFunc();
+    myFunc();     
 
     $('#Fantastic').on('click', function () {
       window.location.reload();

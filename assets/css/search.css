@@ -52,7 +52,7 @@ footer{
     flex-direction: column;
     color: white;
     justify-content: space-evenly;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .popular a,.information a,.help a{
@@ -258,3 +258,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 .readMore:hover{
     opacity: 0.5;
 }
+
+.navbar-toggler {
+    border-color: rgb(255,102,203);
+  } 
